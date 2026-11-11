@@ -51,7 +51,6 @@
     );
   }
 
-  // Apply saved theme (or dark theme by default).
   const savedTheme = readStorage("ironfit-theme");
   applyTheme(savedTheme === "light" ? "light" : "dark");
 
@@ -66,9 +65,6 @@
     });
   }
 
-  // ------------------------------------------------------------
-  // 2. PROGRAMS PAGE: LIVE SEARCH + CATEGORY FILTER
-  // ------------------------------------------------------------
 
   const searchInput = getElement("programSearch");
 
@@ -118,9 +114,6 @@
     filterPrograms();
   }
 
-  // ------------------------------------------------------------
-  // 3. CONTACT PAGE: REGISTRATION VALIDATION
-  // ------------------------------------------------------------
 
   const registrationForm = getElement("registrationForm");
 
@@ -138,9 +131,9 @@
       if (/\d/.test(password)) score++;
       if (/[^A-Za-z0-9]/.test(password)) score++;
 
-      if (score <= 2) return 1; // Weak
-      if (score <= 3) return 2; // Medium
-      return 3;                // Strong
+      if (score <= 2) return 1; 
+      if (score <= 3) return 2; 
+      return 3;                
     }
 
     function validateField(fieldId) {
@@ -188,7 +181,6 @@
         }
       }
 
-      // Show feedback immediately while the user is typing.
       const hasError = Boolean(errorMessage);
       input.classList.toggle("is-invalid", hasError);
       input.classList.toggle("is-valid", !hasError && Boolean(value));
@@ -205,14 +197,12 @@
       getElement(fieldId).addEventListener("input", function () {
         validateField(fieldId);
 
-        // Re-check confirmation whenever the original password changes.
         if (fieldId === "password" && getElement("confirmPassword").value) {
           validateField("confirmPassword");
         }
       });
     });
 
-    // Automatically pre-select a plan linked from the membership page.
     const requestedPlan = new URLSearchParams(location.search).get("plan");
     const validPlans = ["basic", "standard", "premium"];
 
@@ -242,7 +232,6 @@
         return;
       }
 
-      // Demonstration only: no request is sent to a server.
       status.className = "alert-inline success mt-3";
       status.textContent =
         "Validation successful! This is a demonstration form; " +
@@ -257,9 +246,6 @@
     });
   }
 
-  // ------------------------------------------------------------
-  // 4. MEMBERSHIP PAGE: CREATE, READ, UPDATE, DELETE (CRUD)
-  // ------------------------------------------------------------
 
   const memberForm = getElement("memberForm");
 
@@ -291,7 +277,7 @@
       }
     }
 
-    // READ: render the current list as HTML table rows.
+  
     function renderMembers() {
       const tbody = getElement("memberRows");
 
@@ -329,7 +315,6 @@
       getElement("memberCancel").hidden = true;
     }
 
-    // CREATE or UPDATE: same form, depending on whether memberId is set.
     memberForm.addEventListener("submit", function (event) {
       event.preventDefault();
 
@@ -387,7 +372,6 @@
       if (!member) return;
 
       if (button.dataset.action === "delete") {
-        // DELETE: require confirmation before removing the record.
         const confirmed = confirm(`Delete ${member.name}? This action cannot be undone.`);
         if (!confirmed) return;
 
@@ -401,7 +385,6 @@
 
         if (getElement("memberId").value === member.id) resetMemberForm();
       } else {
-        // UPDATE: fill the form with the selected member's details.
         getElement("memberId").value = member.id;
         getElement("memberName").value = member.name;
         getElement("memberEmail").value = member.email;
@@ -423,9 +406,6 @@
     renderMembers();
   }
 
-  // ------------------------------------------------------------
-  // 5. GALLERY PAGE: LIGHTBOX WITH JQUERY FADE ANIMATIONS
-  // ------------------------------------------------------------
 
   const galleryItems = document.querySelectorAll(".gallery-item");
 
@@ -451,7 +431,6 @@
       }
 
       if (window.jQuery) {
-        // jQuery is used here to meet the required fade animations.
         window.jQuery(image).stop(true, true).fadeOut(130, function () {
           showImage();
           window.jQuery(image).fadeIn(210);
@@ -517,7 +496,6 @@
       } else if (event.key === "ArrowLeft") {
         changeGalleryImage(currentIndex - 1);
       } else if (event.key === "Tab") {
-        // Keep keyboard focus inside the three lightbox controls.
         const controls = [
           getElement("lightboxClose"),
           getElement("lightboxPrev"),
