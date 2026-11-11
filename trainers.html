@@ -1,101 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IRONFIT | Trainers</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="IRONFIT gym &mdash; programs, trainers, memberships, registration and gallery." name="description"/>
+    <title>
+      IRONFIT | Our Trainers
+    </title>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <script>
+      try {
+        const savedTheme = localStorage.getItem("ironfit-theme");
+        document.documentElement.dataset.theme = savedTheme === "light" ? "light" : "dark";
+      } catch (error) {
+        document.documentElement.dataset.theme = "dark";
+      }
+    </script>
+    <link href="css/style.css" rel="stylesheet"/>
+  </head>
+  <body>
     <header class="site-header">
-        <div class="container header-content">
-            <a class="logo" href="index.html">IRONFIT</a>
-            <nav>
-                <ul class="nav-list">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="programs.html">Programs</a></li>
-                    <li><a class="active" href="trainers.html">Trainers</a></li>
-                    <li><a href="membership.html">Membership</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+      <div class="container header-content">
+        <a class="logo" href="index.html">
+          IRON
+          <span>
+            FIT
+          </span>
+        </a>
+        <nav aria-label="Main navigation">
+          <ul class="nav-list">
+            <li>
+              <a href="index.html">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="programs.html">
+                Programs
+              </a>
+            </li>
+            <li>
+              <a aria-current="page" class="active" href="trainers.html">
+                Trainers
+              </a>
+            </li>
+            <li>
+              <a href="membership.html">
+                Membership
+              </a>
+            </li>
+            <li>
+              <a href="gallery.html">
+                Gallery
+              </a>
+            </li>
+            <li>
+              <a href="contact.html">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <button aria-label="Switch to light mode" class="theme-toggle" id="themeToggle" type="button">
+          ☀ Light
+        </button>
+      </div>
     </header>
-
     <main>
-        <section class="page-title">
-            <div class="container">
-                <h1>Our Trainers</h1>
-                <p>Meet our coaches and choose a trainer who can help you improve your technique and reach your goals.</p>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <div class="trainer-grid">
-                    <article class="trainer-card">
-                        <img src="images/first_trainer.jpg" alt="Strength trainer" loading="lazy">
-                        <div class="trainer-info">
-                            <h3>Michael B. Jordan</h3>
-                            <p>Strength Coach</p>
-                            <p>Strength coach with experience in resistance training, exercise technique and muscle development.</p>
-                        </div>
-                    </article>
-
-                    <article class="trainer-card">
-                        <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=800&q=80" alt="Fitness trainer" loading="lazy">
-                        <div class="trainer-info">
-                            <h3>Sarah Wilson</h3>
-                            <p>Fitness Trainer</p>
-                            <p>Works with general fitness, cardio training and beginner-friendly programs for different fitness levels.</p>
-                        </div>
-                    </article>
-
-                    <article class="trainer-card">
-                        <img src="images/third_trainer.jpg" alt="CrossFit trainer" loading="lazy">
-                        <div class="trainer-info">
-                            <h3>Chris Hemsworth</h3>
-                            <p>CrossFit Coach</p>
-                            <p>Focuses on functional strength, endurance and high-intensity workouts for active members.</p>
-                        </div>
-                    </article>
-
-                    <article class="trainer-card">
-                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80" alt="Yoga instructor" loading="lazy">
-                        <div class="trainer-info">
-                            <h3>Emily Davis</h3>
-                            <p>Yoga Instructor</p>
-                            <p>Helps members improve flexibility, balance, mobility and recovery through yoga and stretching.</p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container footer-content">
-            <div>
-                <h3>IRONFIT</h3>
-                <p>A modern fitness club for strength, cardio and personal training.</p>
-                <ul class="social-links">
-                    <li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
-                    <li><a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
-                    <li><a href="https://www.youtube.com/" target="_blank">YouTube</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3>Contact</h3>
-                <p>123 Fitness Street, Astana</p>
-                <p>+7 777 123 45 67</p>
-                <p>info@ironfit.com</p>
-                <p>© 2026 IRONFIT</p>
-            </div>
+      <section class="page-title">
+        <div class="container">
+          <span class="eyebrow">
+            IRONFIT FITNESS CLUB
+          </span>
+          <h1>
+            Our Trainers
+          </h1>
+          <p>
+            Meet our coaches and choose a trainer who can help you improve your technique and reach your goals.
+          </p>
         </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="trainer-grid">
+            <article class="trainer-card">
+              <img alt="Michael B. Jordan" loading="lazy" onerror="this.onerror=null;this.src='images/fallback-8.svg'" src="https://raw.githubusercontent.com/yernar122/midterm_fitness_website/main/images/first_trainer.jpg"/>
+              <div class="trainer-info">
+                <span class="category-label">
+                  COACH
+                </span>
+                <h3>
+                  Michael B. Jordan
+                </h3>
+                <p class="job">
+                  Strength Coach
+                </p>
+                <p>
+                  Strength coach with experience in resistance training, exercise technique and muscle development.
+                </p>
+              </div>
+            </article>
+            <article class="trainer-card">
+              <img alt="Sarah Wilson" loading="lazy" onerror="this.onerror=null;this.src='images/fallback-8.svg'" src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+              <div class="trainer-info">
+                <span class="category-label">
+                  COACH
+                </span>
+                <h3>
+                  Sarah Wilson
+                </h3>
+                <p class="job">
+                  Fitness Trainer
+                </p>
+                <p>
+                  Works with general fitness, cardio training and beginner-friendly programs for different fitness levels.
+                </p>
+              </div>
+            </article>
+            <article class="trainer-card">
+              <img alt="Chris Hemsworth" loading="lazy" onerror="this.onerror=null;this.src='images/fallback-8.svg'" src="https://raw.githubusercontent.com/yernar122/midterm_fitness_website/main/images/third_trainer.jpg"/>
+              <div class="trainer-info">
+                <span class="category-label">
+                  COACH
+                </span>
+                <h3>
+                  Chris Hemsworth
+                </h3>
+                <p class="job">
+                  CrossFit Coach
+                </p>
+                <p>
+                  Focuses on functional strength, endurance and high-intensity workouts for active members.
+                </p>
+              </div>
+            </article>
+            <article class="trainer-card">
+              <img alt="Emily Davis" loading="lazy" onerror="this.onerror=null;this.src='images/fallback-8.svg'" src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+              <div class="trainer-info">
+                <span class="category-label">
+                  COACH
+                </span>
+                <h3>
+                  Emily Davis
+                </h3>
+                <p class="job">
+                  Yoga Instructor
+                </p>
+                <p>
+                  Helps members improve flexibility, balance, mobility and recovery through yoga and stretching.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <div>
+          <h3>
+            IRON
+            <span>
+              FIT
+            </span>
+          </h3>
+          <p>
+            A modern fitness club for strength, cardio and personal training.
+          </p>
+          <ul class="social-links">
+            <li>
+              <a href="https://www.instagram.com/" rel="noopener noreferrer" target="_blank">
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/" rel="noopener noreferrer" target="_blank">
+                Facebook
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/" rel="noopener noreferrer" target="_blank">
+                YouTube
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3>
+            Contact
+          </h3>
+          <p>
+            Mangilik El 55/1, Astana
+          </p>
+          <p>
+            +7 777 123 45 67
+          </p>
+          <p>
+            info@ironfit.com
+          </p>
+          <p>
+            &copy; 2026 IRONFIT
+          </p>
+        </div>
+      </div>
     </footer>
-</body>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js">
+    </script>
+    <script src="js/script.js">
+    </script>
+  </body>
 </html>
+
