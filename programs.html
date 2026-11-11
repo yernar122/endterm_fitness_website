@@ -1,125 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IRONFIT | Programs</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="IRONFIT gym &mdash; programs, trainers, memberships, registration and gallery." name="description"/>
+    <title>
+      IRONFIT | Our Programs
+    </title>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <script>
+      try {
+        const savedTheme = localStorage.getItem("ironfit-theme");
+        document.documentElement.dataset.theme = savedTheme === "light" ? "light" : "dark";
+      } catch (error) {
+        document.documentElement.dataset.theme = "dark";
+      }
+    </script>
+    <link href="css/style.css" rel="stylesheet"/>
+  </head>
+  <body>
     <header class="site-header">
-        <div class="container header-content">
-            <a class="logo" href="index.html">IRONFIT</a>
-            <nav>
-                <ul class="nav-list">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a class="active" href="programs.html">Programs</a></li>
-                    <li><a href="trainers.html">Trainers</a></li>
-                    <li><a href="membership.html">Membership</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+      <div class="container header-content">
+        <a class="logo" href="index.html">
+          IRON
+          <span>
+            FIT
+          </span>
+        </a>
+        <nav aria-label="Main navigation">
+          <ul class="nav-list">
+            <li>
+              <a href="index.html">
+                Home
+              </a>
+            </li>
+            <li>
+              <a aria-current="page" class="active" href="programs.html">
+                Programs
+              </a>
+            </li>
+            <li>
+              <a href="trainers.html">
+                Trainers
+              </a>
+            </li>
+            <li>
+              <a href="membership.html">
+                Membership
+              </a>
+            </li>
+            <li>
+              <a href="gallery.html">
+                Gallery
+              </a>
+            </li>
+            <li>
+              <a href="contact.html">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <button aria-label="Switch to light mode" class="theme-toggle" id="themeToggle" type="button">
+          ☀ Light
+        </button>
+      </div>
     </header>
-
     <main>
-        <section class="page-title">
-            <div class="container">
-                <h1>Our Programs</h1>
-                <p>Choose the training style that matches your goals, experience and preferred way of exercising.</p>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <div class="row g-4">
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <article class="program-card">
-                            <img src="images/first_for_programs.jpg" alt="Strength training" loading="lazy">
-                            <div class="program-content">
-                                <h2 class="h4">Strength Training</h2>
-                                <p>Build muscle, improve strength and learn correct exercise technique with free weights and strength machines.</p>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <article class="program-card">
-                            <img src="images/second_for_programs.jpg" alt="Cardio training" loading="lazy">
-                            <div class="program-content">
-                                <h2 class="h4">Cardio Training</h2>
-                                <p>Improve endurance and cardiovascular fitness with treadmills, bikes and other cardio exercises.</p>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <article class="program-card">
-                            <img src="images/third_for_programs.jpg" alt="CrossFit training" loading="lazy">
-                            <div class="program-content">
-                                <h2 class="h4">CrossFit</h2>
-                                <p>High-intensity workouts that combine strength, endurance and functional movements in one training session.</p>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <article class="program-card">
-                            <img src="images/fourth_for_programs.jpg" alt="Yoga and stretching" loading="lazy">
-                            <div class="program-content">
-                                <h2 class="h4">Yoga &amp; Stretching</h2>
-                                <p>Improve flexibility, balance and mobility while helping your body recover after harder workouts.</p>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <article class="program-card">
-                            <img src="images/fifth_for_programs.jpg" alt="Personal training" loading="lazy">
-                            <div class="program-content">
-                                <h2 class="h4">Personal Training</h2>
-                                <p>Train one-to-one with a coach who can create a program based on your level, goals and progress.</p>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <article class="program-card">
-                            <img src="images/sixth_for_programs.jpg" alt="Group training" loading="lazy">
-                            <div class="program-content">
-                                <h2 class="h4">Group Training</h2>
-                                <p>Train together with other members in energetic group sessions and stay motivated through teamwork.</p>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container footer-content">
-            <div>
-                <h3>IRONFIT</h3>
-                <p>A modern fitness club for strength, cardio and personal training.</p>
-                <ul class="social-links">
-                    <li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
-                    <li><a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
-                    <li><a href="https://www.youtube.com/" target="_blank">YouTube</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3>Contact</h3>
-                <p>123 Fitness Street, Astana</p>
-                <p>+7 777 123 45 67</p>
-                <p>info@ironfit.com</p>
-                <p>© 2026 IRONFIT</p>
-            </div>
+      <section class="page-title">
+        <div class="container">
+          <span class="eyebrow">
+            IRONFIT FITNESS CLUB
+          </span>
+          <h1>
+            Our Programs
+          </h1>
+          <p>
+            Choose the training style that matches your goals, experience and preferred way of exercising.
+          </p>
         </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="filter-panel">
+            <label class="form-label" for="programSearch">
+              Find your workout
+            </label>
+            <input autocomplete="off" class="form-control" id="programSearch" placeholder="Search programs (e.g. yoga, cardio...)" type="search"/>
+            <div aria-label="Filter programs" class="filters" role="group">
+              <button aria-pressed="true" class="filter-btn selected" data-filter="all" type="button">
+                All
+              </button>
+              <button aria-pressed="false" class="filter-btn" data-filter="strength" type="button">
+                Strength
+              </button>
+              <button aria-pressed="false" class="filter-btn" data-filter="cardio" type="button">
+                Cardio
+              </button>
+              <button aria-pressed="false" class="filter-btn" data-filter="flexibility" type="button">
+                Flexibility
+              </button>
+            </div>
+            <p aria-live="polite" class="helper" id="programCount">
+            </p>
+          </div>
+          <div class="row g-4" id="programGrid">
+            <div class="col-lg-4 col-md-6 col-12 program-item" data-category="strength">
+              <article class="program-card">
+                <img alt="Strength Training" loading="lazy" onerror="this.onerror=null;this.src='images/fallback-1.svg'" src="https://raw.githubusercontent.com/yernar122/midterm_fitness_website/main/images/first_for_programs.jpg"/>
+                <div class="program-content">
+                  <span class="category-label">
+                    STRENGTH
+                  </span>
+                  <h2 class="h4">
+                    Strength Training
+                  </h2>
+                  <p>
+                    Build muscle, improve strength and learn correct exercise technique with free weights and strength machines.
+                  </p>
+                </div>
+              </article>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 program-item" data-category="cardio">
+              <article class="program-card">
+                <img alt="Cardio Training" loading="lazy" onerror="this.onerror=null;this.src='images/fallback-2.svg'" src="https://raw.githubusercontent.com/yernar122/midterm_fitness_website/main/images/second_for_programs.jpg"/>
+                <div class="program-content">
+                  <span class="category-label">
+                    CARDIO
+                  </span>
+                  <h2 class="h4">
+                    Cardio Training
+                  </h2>
+                  <p>
+                    Improve endurance and cardiovascular fitness with treadmills, bikes and other cardio exercises.
+                  </p>
+                </div>
+              </article>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 program-item" data-category="strength">
+              <article class="program-card">
+                <img alt="CrossFit" loading="lazy" onerror="this.onerror=null;this.src='images/fallback-3.svg'" src="https://raw.githubusercontent.com/yernar122/midterm_fitness_website/main/images/third_for_programs.jpg"/>
+                <div class="program-content">
+                  <span class="category-label">
+                    STRENGTH
+                  </span>
+                  <h2 class="h4">
+                    CrossFit
+                  </h2>
+                  <p>
+                    High-intensity workouts that combine strength, endurance and functional movements in one training session.
+                  </p>
+                </div>
+              </article>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 program-item" data-category="flexibility">
+              <article class="program-card">
+                <img alt="Yoga &amp; Stretching" loading="lazy" onerror="this.onerror=null;this.src='images/fallback-4.svg'" src="https://raw.githubusercontent.com/yernar122/midterm_fitness_website/main/images/fourth_for_programs.jpg"/>
+                <div class="program-content">
+                  <span class="category-label">
+                    FLEXIBILITY
+                  </span>
+                  <h2 class="h4">
+                    Yoga &amp; Stretching
+                  </h2>
+                  <p>
+                    Improve flexibility, balance and mobility while helping your body recover after harder workouts.
+                  </p>
+                </div>
+              </article>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 program-item" data-category="strength">
+              <article class="program-card">
+                <img alt="Personal Training" loading="lazy" onerror="this.onerror=null;this.src='images/fallback-5.svg'" src="https://raw.githubusercontent.com/yernar122/midterm_fitness_website/main/images/fifth_for_programs.jpg"/>
+                <div class="program-content">
+                  <span class="category-label">
+                    STRENGTH
+                  </span>
+                  <h2 class="h4">
+                    Personal Training
+                  </h2>
+                  <p>
+                    Train one-to-one with a coach who can create a program based on your level, goals and progress.
+                  </p>
+                </div>
+              </article>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 program-item" data-category="cardio">
+              <article class="program-card">
+                <img alt="Group Training" loading="lazy" onerror="this.onerror=null;this.src='images/fallback-6.svg'" src="https://raw.githubusercontent.com/yernar122/midterm_fitness_website/main/images/sixth_for_programs.jpg"/>
+                <div class="program-content">
+                  <span class="category-label">
+                    CARDIO
+                  </span>
+                  <h2 class="h4">
+                    Group Training
+                  </h2>
+                  <p>
+                    Train together with other members in energetic group sessions and stay motivated through teamwork.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="empty-state" hidden="" id="noPrograms">
+            No matching programs found. Try another search or category.
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <div>
+          <h3>
+            IRON
+            <span>
+              FIT
+            </span>
+          </h3>
+          <p>
+            A modern fitness club for strength, cardio and personal training.
+          </p>
+          <ul class="social-links">
+            <li>
+              <a href="https://www.instagram.com/" rel="noopener noreferrer" target="_blank">
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/" rel="noopener noreferrer" target="_blank">
+                Facebook
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/" rel="noopener noreferrer" target="_blank">
+                YouTube
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3>
+            Contact
+          </h3>
+          <p>
+            Mangilik El 55/1, Astana
+          </p>
+          <p>
+            +7 777 123 45 67
+          </p>
+          <p>
+            info@ironfit.com
+          </p>
+          <p>
+            &copy; 2026 IRONFIT
+          </p>
+        </div>
+      </div>
     </footer>
-</body>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js">
+    </script>
+    <script src="js/script.js">
+    </script>
+  </body>
 </html>
+
