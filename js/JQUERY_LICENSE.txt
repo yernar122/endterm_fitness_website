@@ -1,0 +1,6 @@
+jQuery v3.7.1
+Copyright OpenJS Foundation and other contributors.
+Licensed under the MIT License.
+Official project: https://jquery.com/
+License: https://jquery.org/license/
+Source distribution: https://github.com/jquery/jquery
