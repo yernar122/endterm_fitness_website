@@ -66,6 +66,11 @@
         <button aria-label="Switch to light mode" class="theme-toggle" id="themeToggle" type="button">
           ☀ Light
         </button>
+        <div class="auth-controls" aria-label="Account controls">
+          <a class="auth-signin" id="signInLink" href="signin.html">Sign In</a>
+          <span class="auth-greeting" id="signedInUser" hidden>Hi, <strong id="signedInName"></strong></span>
+          <button class="auth-signout" id="signOutButton" type="button" hidden>Logout</button>
+        </div>
       </div>
     </header>
     <main>
@@ -109,7 +114,7 @@
           <div class="row g-4" id="programGrid">
             <div class="col-lg-4 col-md-6 col-12 program-item" data-category="strength">
               <article class="program-card">
-                <img alt="Strength Training" loading="lazy" onerror="this.onerror=null;this.src='images/fallback-1.svg'" src="https://raw.githubusercontent.com/yernar122/midterm_fitness_website/main/images/first_for_programs.jpg"/>
+                <img alt="Strength Training" loading="lazy" onerror="this.onerror=null;this.src='images/fallback-1.svg'" src="images/first_for_programs.jpg"/>
                 <div class="program-content">
                   <span class="category-label">
                     STRENGTH
@@ -125,7 +130,7 @@
             </div>
             <div class="col-lg-4 col-md-6 col-12 program-item" data-category="cardio">
               <article class="program-card">
-                <img alt="Cardio Training" loading="lazy" onerror="this.onerror=null;this.src='images/fallback-2.svg'" src="https://raw.githubusercontent.com/yernar122/midterm_fitness_website/main/images/second_for_programs.jpg"/>
+                <img alt="Cardio Training" loading="lazy" onerror="this.onerror=null;this.src='images/fallback-2.svg'" src="images/second_for_programs.jpg"/>
                 <div class="program-content">
                   <span class="category-label">
                     CARDIO
@@ -141,7 +146,7 @@
             </div>
             <div class="col-lg-4 col-md-6 col-12 program-item" data-category="strength">
               <article class="program-card">
-                <img alt="CrossFit" loading="lazy" onerror="this.onerror=null;this.src='images/fallback-3.svg'" src="https://raw.githubusercontent.com/yernar122/midterm_fitness_website/main/images/third_for_programs.jpg"/>
+                <img alt="CrossFit" loading="lazy" onerror="this.onerror=null;this.src='images/fallback-3.svg'" src="images/third_for_programs.jpg"/>
                 <div class="program-content">
                   <span class="category-label">
                     STRENGTH
@@ -157,7 +162,7 @@
             </div>
             <div class="col-lg-4 col-md-6 col-12 program-item" data-category="flexibility">
               <article class="program-card">
-                <img alt="Yoga &amp; Stretching" loading="lazy" onerror="this.onerror=null;this.src='images/fallback-4.svg'" src="https://raw.githubusercontent.com/yernar122/midterm_fitness_website/main/images/fourth_for_programs.jpg"/>
+                <img alt="Yoga &amp; Stretching" loading="lazy" onerror="this.onerror=null;this.src='images/fallback-4.svg'" src="images/fourth_for_programs.jpg"/>
                 <div class="program-content">
                   <span class="category-label">
                     FLEXIBILITY
@@ -173,7 +178,7 @@
             </div>
             <div class="col-lg-4 col-md-6 col-12 program-item" data-category="strength">
               <article class="program-card">
-                <img alt="Personal Training" loading="lazy" onerror="this.onerror=null;this.src='images/fallback-5.svg'" src="https://raw.githubusercontent.com/yernar122/midterm_fitness_website/main/images/fifth_for_programs.jpg"/>
+                <img alt="Personal Training" loading="lazy" onerror="this.onerror=null;this.src='images/fallback-5.svg'" src="images/fifth_for_programs.jpg"/>
                 <div class="program-content">
                   <span class="category-label">
                     STRENGTH
@@ -189,7 +194,7 @@
             </div>
             <div class="col-lg-4 col-md-6 col-12 program-item" data-category="cardio">
               <article class="program-card">
-                <img alt="Group Training" loading="lazy" onerror="this.onerror=null;this.src='images/fallback-6.svg'" src="https://raw.githubusercontent.com/yernar122/midterm_fitness_website/main/images/sixth_for_programs.jpg"/>
+                <img alt="Group Training" loading="lazy" onerror="this.onerror=null;this.src='images/fallback-6.svg'" src="images/sixth_for_programs.jpg"/>
                 <div class="program-content">
                   <span class="category-label">
                     CARDIO
@@ -207,6 +212,30 @@
           <div class="empty-state" hidden="" id="noPrograms">
             No matching programs found. Try another search or category.
           </div>
+        </div>
+      </section>
+
+      <section class="section bg-dark" id="exerciseExplorer">
+        <div class="container">
+          <div class="section-title">
+            <span class="eyebrow">LIVE EXERCISE DATABASE</span>
+            <h2>Explore Real Exercises</h2>
+            <p>Exercises are requested from the public wger Workout Manager.</p>
+          </div>
+          <div class="exercise-controls">
+            <div>
+              <label class="form-label" for="exerciseSearch">Search exercises</label>
+              <input class="form-control" type="search" id="exerciseSearch" placeholder="Try bench press, squat, abs..." autocomplete="off"/>
+            </div>
+            <div>
+              <label class="form-label" for="exerciseCategory">Exercise category</label>
+              <select class="form-select" id="exerciseCategory"><option value="all">All categories</option></select>
+            </div>
+            <button class="btn-main exercise-refresh" type="button" id="refreshExercises">Refresh from API</button>
+          </div>
+          <p id="exerciseStatus" class="helper" role="status" aria-live="polite">Loading exercises from the API...</p>
+          <div id="exerciseResults" class="exercise-grid" aria-live="polite"></div>
+          <p class="helper api-attribution">Exercise information: <a href="https://wger.de/" target="_blank" rel="noopener noreferrer">wger Workout Manager</a> (public API). Content may be unavailable if the API or network is down.</p>
         </div>
       </section>
     </main>
@@ -258,11 +287,13 @@
           </p>
         </div>
       </div>
+
     </footer>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js">
+    <script src="js/jquery-3.7.1.min.js">
     </script>
     <script src="js/script.js">
     </script>
+    <script src="js/exercises-api.js"></script>
   </body>
 </html>
 
