@@ -66,6 +66,11 @@
         <button aria-label="Switch to light mode" class="theme-toggle" id="themeToggle" type="button">
           ☀ Light
         </button>
+        <div class="auth-controls" aria-label="Account controls">
+          <a class="auth-signin" id="signInLink" href="signin.html">Sign In</a>
+          <span class="auth-greeting" id="signedInUser" hidden>Hi, <strong id="signedInName"></strong></span>
+          <button class="auth-signout" id="signOutButton" type="button" hidden>Logout</button>
+        </div>
       </div>
     </header>
     <main>
@@ -317,13 +322,13 @@
                   <label class="form-label" for="memberName">
                     Member name
                   </label>
-                  <input class="form-control" id="memberName" maxlength="80" placeholder="e.g. Alex Smith" required=""/>
+                  <input class="form-control" id="memberName" maxlength="80" placeholder="e.g. Toni Stark" required=""/>
                 </div>
                 <div class="col-md-4">
                   <label class="form-label" for="memberEmail">
                     Email
                   </label>
-                  <input class="form-control" id="memberEmail" placeholder="alex@example.com" required="" type="email"/>
+                  <input class="form-control" id="memberEmail" placeholder="toni@example.com" required="" type="email"/>
                 </div>
                 <div class="col-md-2">
                   <label class="form-label" for="memberPlan">
@@ -432,8 +437,9 @@
           </p>
         </div>
       </div>
+
     </footer>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js">
+    <script src="js/jquery-3.7.1.min.js">
     </script>
     <script src="js/script.js">
     </script>

@@ -146,7 +146,7 @@ button {
   display: flex;
   align-items: center;
   position: relative;
-  background: linear-gradient(90deg,rgba(0,0,0,.9),rgba(0,0,0,.45)),url("https://raw.githubusercontent.com/yernar122/midterm_fitness_website/main/images/background.jpg") center/cover no-repeat,#242020;
+  background: linear-gradient(90deg,rgba(0,0,0,.9),rgba(0,0,0,.45)),url("../images/background.jpg") center/cover no-repeat,#242020;
   color: #fff;
 }
 
@@ -839,3 +839,36 @@ button {
   }
 }
 
+
+
+/* ============================================================
+   FINAL ADDITIONS: Account controls, demo sign-in, FAQ, API
+   ============================================================ */
+.auth-controls { display:flex; align-items:center; flex-wrap:wrap; gap:8px; }
+.auth-signin,.auth-signout { padding:9px 13px; border:1px solid var(--main-color); border-radius:6px; background:transparent; color:var(--title); font-size:12px; font-weight:800; white-space:nowrap; }
+.auth-signin:hover,.auth-signout:hover { background:var(--main-color); color:#111; }
+.auth-greeting { color:var(--muted); font-size:12px; max-width:185px; overflow-wrap:anywhere; }
+.auth-greeting strong { color:var(--title); }
+.auth-signin[hidden],.auth-signout[hidden],.auth-greeting[hidden],#loginWelcome[hidden],#loginFormWrapper[hidden] { display:none !important; }
+.login-panel { max-width:630px; margin:0 auto; border:1px solid var(--border); background:var(--surface); border-radius:12px; padding:38px; }
+.login-panel h2 { margin-bottom:12px; }
+.login-panel .form-control { width:100%; }
+.faq-container { max-width:950px; }
+.faq-list { display:grid; gap:12px; }
+.faq-item { background:var(--surface); border:1px solid var(--border); border-radius:9px; overflow:hidden; }
+.faq-question { display:flex; justify-content:space-between; align-items:center; gap:12px; width:100%; text-align:left; padding:17px 20px; border:0; color:var(--title); background:transparent; font-weight:700; }
+.faq-question:hover,.faq-question:focus-visible { color:var(--main-color); }
+.faq-indicator { color:var(--main-color); font-size:24px; font-weight:700; flex:none; }
+.faq-answer { display:none; padding:0 20px 18px; color:var(--muted); }
+.faq-answer p { margin:0; }
+.exercise-controls { display:grid; grid-template-columns:minmax(0,1.7fr) minmax(0,1fr) auto; align-items:end; gap:15px; max-width:1000px; margin:0 auto 24px; }
+.exercise-refresh { white-space:nowrap; }
+.exercise-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; margin:20px 0; }
+.exercise-card { padding:23px; border:1px solid var(--border); background:var(--surface); border-radius:10px; }
+.exercise-card h3 { font-size:20px; margin:0 0 12px; }
+.exercise-card p { color:var(--muted); font-size:13px; margin:0; }
+.exercise-grid .empty-state { grid-column:1/-1; }
+.api-attribution a { color:var(--main-color); text-decoration:underline; }
+.ai-credit { max-width:1120px; margin:24px auto 0; padding:0 20px; font-size:11px !important; line-height:1.6; color:#c9c9c9; }
+@media(max-width:1000px) { .exercise-controls { grid-template-columns:1fr 1fr; } .exercise-refresh { grid-column:1/-1; justify-self:start; } .exercise-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:700px) { .exercise-controls { grid-template-columns:1fr; } .exercise-refresh { grid-column:auto; } .exercise-grid { grid-template-columns:1fr; } .login-panel { padding:23px; } }

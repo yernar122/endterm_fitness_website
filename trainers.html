@@ -66,6 +66,11 @@
         <button aria-label="Switch to light mode" class="theme-toggle" id="themeToggle" type="button">
           ☀ Light
         </button>
+        <div class="auth-controls" aria-label="Account controls">
+          <a class="auth-signin" id="signInLink" href="signin.html">Sign In</a>
+          <span class="auth-greeting" id="signedInUser" hidden>Hi, <strong id="signedInName"></strong></span>
+          <button class="auth-signout" id="signOutButton" type="button" hidden>Logout</button>
+        </div>
       </div>
     </header>
     <main>
@@ -86,7 +91,7 @@
         <div class="container">
           <div class="trainer-grid">
             <article class="trainer-card">
-              <img alt="Michael B. Jordan" loading="lazy" onerror="this.onerror=null;this.src='images/fallback-8.svg'" src="https://raw.githubusercontent.com/yernar122/midterm_fitness_website/main/images/first_trainer.jpg"/>
+              <img alt="Michael B. Jordan" loading="lazy" onerror="this.onerror=null;this.src='images/fallback-8.svg'" src="images/first_trainer.jpg"/>
               <div class="trainer-info">
                 <span class="category-label">
                   COACH
@@ -120,7 +125,7 @@
               </div>
             </article>
             <article class="trainer-card">
-              <img alt="Chris Hemsworth" loading="lazy" onerror="this.onerror=null;this.src='images/fallback-8.svg'" src="https://raw.githubusercontent.com/yernar122/midterm_fitness_website/main/images/third_trainer.jpg"/>
+              <img alt="Chris Hemsworth" loading="lazy" onerror="this.onerror=null;this.src='images/fallback-8.svg'" src="images/third_trainer.jpg"/>
               <div class="trainer-info">
                 <span class="category-label">
                   COACH
@@ -205,8 +210,9 @@
           </p>
         </div>
       </div>
+
     </footer>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js">
+    <script src="js/jquery-3.7.1.min.js">
     </script>
     <script src="js/script.js">
     </script>

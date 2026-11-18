@@ -66,6 +66,11 @@
         <button aria-label="Switch to light mode" class="theme-toggle" id="themeToggle" type="button">
           ☀ Light
         </button>
+        <div class="auth-controls" aria-label="Account controls">
+          <a class="auth-signin" id="signInLink" href="signin.html">Sign In</a>
+          <span class="auth-greeting" id="signedInUser" hidden>Hi, <strong id="signedInName"></strong></span>
+          <button class="auth-signout" id="signOutButton" type="button" hidden>Logout</button>
+        </div>
       </div>
     </header>
     <main>
@@ -253,8 +258,9 @@
           </p>
         </div>
       </div>
+
     </footer>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js">
+    <script src="js/jquery-3.7.1.min.js">
     </script>
     <script src="js/script.js">
     </script>

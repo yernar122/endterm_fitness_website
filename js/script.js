@@ -252,9 +252,9 @@
   if (memberForm) {
     const storageKey = "ironfit-demo-members-v1";
     const defaultMembers = [
-      { id: "sample-1", name: "Alex Morgan", email: "alex@example.com", plan: "Basic" },
-      { id: "sample-2", name: "Sam Taylor", email: "sam@example.com", plan: "Standard" },
-      { id: "sample-3", name: "Jordan Lee", email: "jordan@example.com", plan: "Premium" }
+      { id: "sample-1", name: "Yernar Kuanyshbek", email: "yernar@example.com", plan: "Basic" },
+      { id: "sample-2", name: "Ramazan Sailau", email: "ramazan@example.com", plan: "Standard" },
+      { id: "sample-3", name: "Adilbek Nazhim", email: "adilbek@example.com", plan: "Premium" }
     ];
 
     let members = defaultMembers;
@@ -361,7 +361,6 @@
       resetMemberForm();
     });
 
-    // UPDATE / DELETE buttons use event delegation on the table.
     getElement("memberRows").addEventListener("click", function (event) {
       const button = event.target.closest("button[data-action]");
       if (!button) return;
@@ -513,4 +512,96 @@
       }
     });
   }
+
+  const accountStorageKey = "ironfit-demo-account-v1";
+  const emailPatternForLogin = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  function readDemoAccount() {
+    try {
+      const stored = readStorage(accountStorageKey);
+      if (!stored) return null;
+      const account = JSON.parse(stored);
+      if (!account || typeof account.email !== "string" ||
+          !emailPatternForLogin.test(account.email)) return null;
+      return account;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function updateAccountInterface() {
+    const account = readDemoAccount();
+    const signInLink = getElement("signInLink");
+    const greeting = getElement("signedInUser");
+    const greetingName = getElement("signedInName");
+    const logout = getElement("signOutButton");
+    const loginFormWrapper = getElement("loginFormWrapper");
+    const loginWelcome = getElement("loginWelcome");
+    const welcomeAccount = getElement("welcomeAccount");
+
+    if (signInLink) signInLink.hidden = Boolean(account);
+    if (greeting) greeting.hidden = !account;
+    if (logout) logout.hidden = !account;
+    if (greetingName) greetingName.textContent = account ? account.email : "";
+
+    if (loginFormWrapper) loginFormWrapper.hidden = Boolean(account);
+    if (loginWelcome) loginWelcome.hidden = !account;
+    if (welcomeAccount) {
+      welcomeAccount.textContent = account ? "Signed in as: " + account.email : "";
+    }
+  }
+
+  function signOutDemoAccount() {
+    try { localStorage.removeItem(accountStorageKey); } catch (error) { }
+    const feedback = getElement("loginFeedback");
+    if (feedback) feedback.textContent = "";
+    const form = getElement("loginForm");
+    if (form) form.reset();
+    updateAccountInterface();
+  }
+
+  const topLogout = getElement("signOutButton");
+  if (topLogout) topLogout.addEventListener("click", signOutDemoAccount);
+  const pageLogout = getElement("loginPageSignOut");
+  if (pageLogout) pageLogout.addEventListener("click", signOutDemoAccount);
+
+  const loginForm = getElement("loginForm");
+  if (loginForm) {
+    loginForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const email = getElement("loginEmail").value.trim();
+      const password = getElement("loginPassword").value;
+      const feedback = getElement("loginFeedback");
+
+      if (!emailPatternForLogin.test(email)) {
+        feedback.textContent = "Please enter a valid email address.";
+        getElement("loginEmail").focus();
+        return;
+      }
+      if (password.length < 8) {
+        feedback.textContent = "Password must contain at least 8 characters.";
+        getElement("loginPassword").focus();
+        return;
+      }
+
+      if (!writeStorage(accountStorageKey, JSON.stringify({ email: email }))) {
+        feedback.textContent = "Cannot save the sign-in state. Check your browser storage settings.";
+        return;
+      }
+      loginForm.reset();
+      feedback.textContent = "";
+      updateAccountInterface();
+    });
+  }
+  updateAccountInterface();
+
+  if (window.jQuery) {
+    window.jQuery(".faq-question").on("click", function () {
+      const wasExpanded = this.getAttribute("aria-expanded") === "true";
+      window.jQuery(this).next(".faq-answer").stop(true, true).slideToggle(250);
+      this.setAttribute("aria-expanded", String(!wasExpanded));
+      window.jQuery(this).find(".faq-indicator").text(wasExpanded ? "+" : "−");
+    });
+  }
+
 })();
