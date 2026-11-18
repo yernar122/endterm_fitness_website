@@ -153,7 +153,7 @@ The **Midterm and Endterm contributions below are preserved from the original RE
 - Implemented .slideToggle() animations to show and hide answers.
 - Added +/− indicators to display the current state of each FAQ question.
 - Checked Contact form validation and Membership CRUD functionality.
-- Prepared the **Final Project Report**, including project descriptions, individual contributions, and screenshot sections.
+- Prepared the **README**, including project descriptions.
 
 ## 7. GitHub Links and Submission
 
