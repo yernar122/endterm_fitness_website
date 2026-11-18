@@ -155,6 +155,7 @@ The **Midterm and Endterm contributions below are preserved from the original RE
 - Checked Contact form validation and Membership CRUD functionality.
 - Prepared the **README**, including project descriptions.
 
+
 ## 7. GitHub Links and Submission
 
 - **GitHub repository:** https://github.com/yernar122/final_project_fitness_website
