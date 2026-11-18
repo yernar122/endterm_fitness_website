@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IRONFIT demonstration sign-in with localStorage">
+    <title>IRONFIT | Sign In</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script>
+      try {
+        document.documentElement.dataset.theme =
+          localStorage.getItem('ironfit-theme') === 'light' ? 'light' : 'dark';
+      } catch (error) {
+        document.documentElement.dataset.theme = 'dark';
+      }
+    </script>
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-content">
+        <a class="logo" href="index.html">IRON<span>FIT</span></a>
+        <nav aria-label="Main navigation">
+          <ul class="nav-list">
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="programs.html">Programs</a>
+            </li>
+            <li>
+              <a href="trainers.html">Trainers</a>
+            </li>
+            <li>
+              <a href="membership.html">Membership</a>
+            </li>
+            <li>
+              <a href="gallery.html">Gallery</a>
+            </li>
+            <li>
+              <a href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </nav>
+        <button aria-label="Switch to light mode" class="theme-toggle" id="themeToggle" type="button">☀ Light</button>
+        <div class="auth-controls" aria-label="Account controls">
+          <a class="auth-signin" id="signInLink" href="signin.html" aria-current="page">Sign In</a>
+          <span class="auth-greeting" id="signedInUser" hidden>Hi, <strong id="signedInName"></strong></span>
+          <button class="auth-signout" id="signOutButton" type="button" hidden>Logout</button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="page-title">
+        <div class="container">
+          <span class="eyebrow">YOUR IRONFIT ACCOUNT</span>
+          <h1>Sign In</h1>
+          <p>A simple localStorage sign-in demonstration for the Final Project.</p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="login-panel">
+            <div id="loginFormWrapper">
+              <h2>Welcome to IRONFIT</h2>
+              <p class="muted">Enter an email and password. This is a frontend demonstration, not a real secured account system.</p>
+              <form id="loginForm" novalidate>
+                <div class="mb-3">
+                  <label class="form-label" for="loginEmail">Email address</label>
+                  <input class="form-control" type="email" name="email" id="loginEmail" autocomplete="email" required placeholder="member@example.com">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" for="loginPassword">Password (at least 8 characters)</label>
+                  <input class="form-control" type="password" name="password" id="loginPassword" autocomplete="current-password" minlength="8" required placeholder="Enter a demo password">
+                </div>
+                <p class="field-feedback" id="loginFeedback" role="alert" aria-live="polite"></p>
+                <button class="btn-main" type="submit">Sign In →</button>
+              </form>
+              <p class="helper mt-3">Your password is validated in memory and is never saved in localStorage. No real identity verification takes place.</p>
+            </div>
+            <div id="loginWelcome" hidden>
+              <h2>You're signed in!</h2>
+              <p class="muted" id="welcomeAccount"></p>
+              <p class="helper">You can refresh this page or navigate to another page. Your demo sign-in status stays active.</p>
+              <button class="btn-outline" id="loginPageSignOut" type="button">Sign Out</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <div>
+          <h3>IRON<span>FIT</span></h3>
+          <p>A modern fitness club for strength, cardio and personal training.</p>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <p>Mangilik El 55/1, Astana</p>
+          <p>info@ironfit.com</p>
+          <p>© 2026 IRONFIT</p>
+        </div>
+      </div>
+    </footer>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
