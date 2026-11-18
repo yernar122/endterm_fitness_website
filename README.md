@@ -157,8 +157,8 @@ The **Midterm and Endterm contributions below are preserved from the original RE
 
 ## 7. GitHub Links and Submission
 
-- **GitHub repository:** https://github.com/yernar122/endterm_fitness_website
-- **GitHub Pages (live website):** https://yernar122.github.io/endterm_fitness_website/
+- **GitHub repository:** https://github.com/yernar122/final_project_fitness_website
+- **GitHub Pages (live website):** https://yernar122.github.io/final_project_fitness_website/
 
 ## 8. AI Usage Acknowledgement
 
